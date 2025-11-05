@@ -1,34 +1,30 @@
-const navbar = [];
-const navitem = navbar.map(nav =>
-    <li>{nav}</li>
+import '../styles/NavBar.css';
+
+const navigation = ['Home', 'About', 'Projects', 'Contact'];
+const navitem = navigation.map(nav =>
+    <li>
+        <a href="#" className="nav-link">
+            {nav}
+        </a>
+    </li>
 )
 function NavBar(){
     return(
         <>
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
+            <nav className="navbar navbar-expand-lg navbar-dark sticky-top">
+                <div className="container">
+                <a className="navbar-brand" href="#">BrandName</a>
+                <button className="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul className="navbar-nav">
+                        {navitem}
                     </ul>
-                    </div>
                 </div>
-                </nav>
+                </div>
+            </nav>
         </>
     )
 }
