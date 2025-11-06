@@ -99,6 +99,22 @@ a:hover {
   color: var(--secondary-color);
 }
 
+/* Section */
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.text-muted-custom {
+  color: var(--text-muted);
+}
+
 /* Buttons (custom look to pair with Bootstrap) */
 .btn-custom {
   background: var(--gradient-primary);

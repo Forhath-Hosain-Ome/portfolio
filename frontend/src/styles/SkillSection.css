@@ -1,0 +1,11 @@
+/* ---------- PROGRESS ---------- */
+.progress-custom {
+  height: 10px;
+  background-color: var(--border-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar-custom {
+  background: var(--gradient-primary);
+}
