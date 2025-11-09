@@ -3,41 +3,83 @@ import ButtonMain from './ButtonMain.jsx'
 
 function SkillSection(){
     return(
-        <>
-            <section id="about" className="section bg-light">
+        <section id="skills" className="section">
   <div className="container">
-        <h2 className="section-title">My Skills</h2>
-    <div className="row align-items-center">
+    <div className="text-center mb-5">
+      <h2 className="section-title">Skills</h2>
+      <p className="text-muted-custom">A mix of technical expertise and creative problem-solving abilities.</p>
+    </div>
 
-      
-      <div className="col-md-6">
-        <div className="mt-4">
-          <div className="mb-3">
-            <div className="progress progress-custom">
-              <div className="progress-bar progress-bar-custom" role="progressbar" style={{width:90 + '%'}} aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+    <div className="row g-4">
+        
+      <div className="col-md-6 col-lg-4">
+        <div className="skill-card text-center">
+          <div className="skill-icon mb-3">
+            <i className="bi bi-code-slash"></i>
+          </div>
+          <h5 className="skill-title">Frontend Development</h5>
+
+          <div className="text-start">
+            <div className="skill-progress">
+              <div className="skill-progress-bar" style={{width:90 + '%'}}></div>
             </div>
-            <small className="text-muted-custom">Frontend Development — 90%</small>
+            <p className="skill-level">HTML / CSS / JavaScript — 90%</p>
+
+            <div className="skill-progress">
+              <div className="skill-progress-bar" style={{width:85 + '%'}}></div>
+            </div>
+            <p className="skill-level">Bootstrap / React — 85%</p>
           </div>
         </div>
-        </div>
-      <div className="col-md-6">
-          <div className="mb-3">
-            <div className="progress progress-custom">
-              <div className="progress-bar progress-bar-custom" role="progressbar" style={{width:80 + '%'}} aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+
+      <div className="col-md-6 col-lg-4">
+        <div className="skill-card text-center">
+          <div className="skill-icon mb-3">
+            <i className="bi bi-server"></i>
+          </div>
+          <h5 className="skill-title">Backend Development</h5>
+
+          <div className="text-start">
+            <div className="skill-progress">
+              <div className="skill-progress-bar" style={{width:80 + '%'}}></div>
             </div>
-            <small className="text-muted-custom">UI/UX Design — 80%</small>
+            <p className="skill-level">Node.js / Express — 80%</p>
+
+            <div className="skill-progress">
+              <div className="skill-progress-bar" style={{width:70 + '%'}}></div>
+            </div>
+            <p className="skill-level">Databases (MongoDB / SQL) — 70%</p>
           </div>
         </div>
-        <div className="mt-4">
-          <ButtonMain label='View Projects'/>
-          <ButtonMain label='Contact Me'/>
+      </div>
+
+
+      <div className="col-md-6 col-lg-4">
+        <div className="skill-card text-center">
+          <div className="skill-icon mb-3">
+            <i className="bi bi-palette"></i>
+          </div>
+          <h5 className="skill-title">UI / UX & Design</h5>
+
+          <div className="text-start">
+            <div className="skill-progress">
+              <div className="skill-progress-bar" style={{width:85 + '%'}}></div>
+            </div>
+            <p className="skill-level">Figma / Adobe XD — 85%</p>
+
+            <div className="skill-progress">
+              <div className="skill-progress-bar" style={{width:75 + '%'}}></div>
+            </div>
+            <p className="skill-level">Branding & Prototyping — 75%</p>
+          </div>
         </div>
       </div>
-      
-      </div>
+    </div>
+  </div>
 </section>
-        </>
     )
 }
 
-export default SkillSection
+export default SkillSection;

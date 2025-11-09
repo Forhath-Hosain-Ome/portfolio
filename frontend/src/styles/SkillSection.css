@@ -1,11 +1,54 @@
-/* ---------- PROGRESS ---------- */
-.progress-custom {
-  height: 10px;
+#skills {
+  background-color: var(--background-color);
+}
+
+.skill-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.skill-icon {
+  width: 45px;
+  height: 45px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: var(--white);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.skill-title {
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.75rem;
+}
+
+.skill-progress {
+  height: 8px;
   background-color: var(--border-color);
   border-radius: 5px;
   overflow: hidden;
+  margin-bottom: 0.4rem;
 }
 
-.progress-bar-custom {
+.skill-progress-bar {
+  height: 100%;
   background: var(--gradient-primary);
+}
+
+.skill-level {
+  font-size: 0.85rem;
+  color: var(--text-muted);
 }
