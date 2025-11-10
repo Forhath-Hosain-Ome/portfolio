@@ -1,9 +1,5 @@
 import '../styles/ButtonMain.css';
 
-// ButtonMain accepts either a `label` prop or children.
-// Example usages:
-// <ButtonMain label="Click me" />
-// <ButtonMain>Click me</ButtonMain>
 function ButtonMain({ label = null, children = null, ...rest }){
     const content = label ?? children;
 
@@ -15,3 +11,8 @@ function ButtonMain({ label = null, children = null, ...rest }){
 }
 
 export default ButtonMain
+
+// ButtonMain accepts either a `label` prop or children.
+// Example usages:
+// <ButtonMain label="Click me" />
+// <ButtonMain>Click me</ButtonMain>

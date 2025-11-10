@@ -1,14 +1,33 @@
+import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
-import HeroSection from './components/HeroSection'
-import SkillSection from './components/SkillSection'
+import Preloader from './components/Preloader';
+import FooterSection from './components/FooterSection';
+import HomePage from './pages/HomePage'
+
 
 function App() {
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <>
-      <NavBar />
-      <HeroSection />
-      <SkillSection />
+      {isLoading ? (
+        <Preloader />
+      ) : (
+          <>
+            <NavBar />
+            <HomePage />
+            <FooterSection />
+          </>
+      )}
     </>
   )
 }
