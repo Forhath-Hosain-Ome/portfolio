@@ -1,0 +1,36 @@
+
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: personal-portfolio-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - debug=True
+      - DJANGO_SETTINGS_MODULE=core_portfolio.settings
+    volumes:
+      - ./backend:/app
+    command: pipenv run python manage.py runserver 0.0.0.0:8000
+    networks:
+      - portfolio-network
+  
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: personal-portfolio-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://backend:8000
+    depends_on:
+      - backend
+    networks:
+      - portfolio-network
+
+networks:
+  portfolio-network:
+    driver: bridge
