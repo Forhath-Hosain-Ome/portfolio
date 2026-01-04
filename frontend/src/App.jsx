@@ -3,6 +3,7 @@ import NavBar from './components/NavBar';
 import Preloader from './components/Preloader';
 import FooterSection from './components/FooterSection';
 import HomePage from './pages/HomePage'
+import Header from './components/Header/Header';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Preloader />
       ) : (
           <>
+            <Header/>
             <NavBar />
             <HomePage />
             <FooterSection />
