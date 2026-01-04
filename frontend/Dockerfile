@@ -1,25 +1,18 @@
-FROM node:20-slim as builder
+FROM node:20-alpine
 
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
 
+# Install dependencies
 RUN npm ci
 
+# Copy project files
 COPY . .
 
-RUN npm run build
+# Expose port 5173 (Vite default dev server port)
+EXPOSE 5173
 
-FROM node:20-slim
-
-WORKDIR /app
-
-RUN npm install -g serve
-
-COPY --from=builder /app/dist ./dist
-
-# Expose port 3000
-EXPOSE 3000
-
-# Serve the app
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Run Vite dev server
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

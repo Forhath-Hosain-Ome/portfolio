@@ -1,4 +1,20 @@
+from decouple import config
+from supabase import create_client, Client
 from pathlib import Path
+import os
+import socket
+
+original_getaddrinfo = socket.getaddrinfo
+
+def getaddrinfo_ipv4_first(host, port, family=0, type=0, proto=0, flags=0):
+    # Try IPv4 first
+    try:
+        return original_getaddrinfo(host, port, socket.AF_INET, type, proto, flags)
+    except socket.gaierror:
+        # Fall back to default behavior
+        return original_getaddrinfo(host, port, family, type, proto, flags)
+
+socket.getaddrinfo = getaddrinfo_ipv4_first
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +29,7 @@ SECRET_KEY = 'django-insecure-_a_$$!z+cs7#0#=rn9bd__x(ur!d6=t#+-&w98$%)!815uh4ro
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', '*']
 
 
 # Application definition
@@ -62,13 +78,34 @@ AUTH_USER_MODEL= 'app_portfolio.UserModel'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+IS_PRODUCTION = config("IS_PRODUCTION")
+supabaseUrl = config("SUPABASE_URL")
+supabaseKey = config("SUPABASE_KEY")
+supabase = create_client(supabaseUrl, supabaseKey)
+if IS_PRODUCTION:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_HOST_NAME'),
+            'USER': config('DB_USER_NAME'),
+            'PASSWORD': config('DB_HOST_PASSWORD'),
+            'HOST': config('DB_HOST_URL'),  # Pooled URL
+            'PORT': '5432',
+            'OPTIONS': {
+                'sslmode': 'require',
+                'sslrootcert': os.path.join(BASE_DIR, 'supabase.crt'),
+            },
+            'CONN_MAX_AGE': 600,  # 10 minutes
+            'CONN_HEALTH_CHECKS': config('DB_HEALTH_CHECK'),
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
