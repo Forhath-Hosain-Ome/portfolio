@@ -1,6 +1,6 @@
-import { ReactComponent as FacebookIcon } from "../lib/icons/Facebook.svg";
-import { ReactComponent as TumblrIcon } from "../lib/icons/Tumblr.svg";
-import { ReactComponent as TwitterIcon } from "../lib/icons/Twitter.svg";
+import FacebookIcon  from "../lib/icons/Facebook.svg";
+import TumblrIcon from "../lib/icons/Tumblr.svg";
+import TwitterIcon from "../lib/icons/Twitter.svg";
 
 export const social2 = [
   {

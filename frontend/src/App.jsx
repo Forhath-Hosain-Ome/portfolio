@@ -4,6 +4,7 @@ import Preloader from './components/Preloader';
 import FooterSection from './components/FooterSection';
 import HomePage from './pages/HomePage'
 import Header from './components/Header/Header';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -24,10 +25,17 @@ function App() {
         <Preloader />
       ) : (
           <>
-            <Header/>
+          <BrowserRouter>
+            <Header /> {/* Header component contains <Link> */}
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              {/* <Route path="/about" element={<AboutPage />} /> */}
+            </Routes>
+          </BrowserRouter>
+            {/* <Header/>
             <NavBar />
             <HomePage />
-            <FooterSection />
+            <FooterSection /> */}
           </>
       )}
     </>

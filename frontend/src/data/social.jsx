@@ -1,21 +1,22 @@
-import { ReactComponent as FacebookIcon } from "../lib/icons/Facebook.svg";
-import { ReactComponent as TumblrIcon } from "../lib/icons/Tumblr.svg";
-import { ReactComponent as TwitterIcon } from "../lib/icons/Twitter.svg";
+import FacebookIcon  from "../lib/icons/Facebook.svg?react";
+import TumblrIcon from "../lib/icons/Tumblr.svg?react";
+import TwitterIcon from "../lib/icons/Twitter.svg?react";
 
 export const social = [
   {
-    socialIcon: <FacebookIcon className="h-7 w-7 md:h-10 md:w-10 fill-white hover:fill-accent2"></FacebookIcon>,
+    socialIcon: FacebookIcon,
     socialLink: "https://www.facebook.com/",
     socialTitle: "Facebook"
   },
   {
-    socialIcon: <TumblrIcon className="h-7 w-7 md:h-10 md:w-10 fill-white hover:fill-accent2"></TumblrIcon>,
+    socialIcon: TumblrIcon,
     socialLink: "#",
     socialTitle: "Tumblr"
   },
   {
-    socialIcon: <TwitterIcon className="h-7 w-7 md:h-10 md:w-10 fill-white hover:fill-accent2"></TwitterIcon>,
+    socialIcon: TwitterIcon,
     socialLink: "https://twitter.com/",
     socialTitle: "Twitter"
   },
 ];
+console.log("social array exported:", social);

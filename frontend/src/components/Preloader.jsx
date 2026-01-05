@@ -4,10 +4,10 @@ import '../styles/Preloader.css';
 function Preloader(){
 	    
     return(
-        <div id="preloader" class="preloader" aria-hidden="true">
-	  <div class="animation-preloader">
+        <div id="preloader" className="preloader" aria-hidden="true">
+	  <div className="animation-preloader">
 		
-		<div class="pulse-spinner">
+		<div className="pulse-spinner">
 		  <div></div>
 		  <div></div>
 		  <div></div>
@@ -24,15 +24,15 @@ function Preloader(){
 		  <span data-text-preloader="H" class="letters-loading">H</span>
 		</div> */}
 
-		<p class="text-center">Loading</p>
+		<p className="text-center">Loading</p>
 	  </div>
 
-	  <div class="loader" aria-hidden="true">
-		<div class="row">
-		  <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-		  <div class="col-3 loader-section section-left"><div class="bg"></div></div>
-		  <div class="col-3 loader-section section-right"><div class="bg"></div></div>
-		  <div class="col-3 loader-section section-right"><div class="bg"></div></div>
+	  <div className="loader" aria-hidden="true">
+		<div className="row">
+		  <div className="col-3 loader-section section-left"><div className="bg"></div></div>
+		  <div className="col-3 loader-section section-left"><div className="bg"></div></div>
+		  <div className="col-3 loader-section section-right"><div className="bg"></div></div>
+		  <div className="col-3 loader-section section-right"><div className="bg"></div></div>
 		</div>
 	  </div>
 	</div>
