@@ -1,3 +1,11 @@
+/* stylelint-disable */
+/* tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable */
+
+/* Your custom styles below */
 /* =========================
    🌐 Root Default CSS Setup
    ========================= */

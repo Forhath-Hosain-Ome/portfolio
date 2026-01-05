@@ -1,8 +1,6 @@
 import { social } from "../../data/social";
 
 const SocialLinks = () => {
-    console.log("SocialLinks component rendered");
-  console.log("social array:", social);
   return (
     <div className="socialLinksWrap flex gap-6 items-center lg:pl-[6.25rem] md:pl-0 pl-0">
       <h5 className="text-white font-Poppins font-bold text-[0.984375rem] uppercase">

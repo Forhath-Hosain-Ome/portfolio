@@ -19,4 +19,3 @@ export const social = [
     socialTitle: "Twitter"
   },
 ];
-console.log("social array exported:", social);
