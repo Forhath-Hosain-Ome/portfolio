@@ -1,0 +1,50 @@
+All 23 Static Data Files:
+1. Blog System (3 files)
+
+blog-detail.jsx - Single detailed blog post
+posts.jsx - 6 posts (simple format)
+posts2.jsx - 6 posts (enhanced with split dates & categories)
+
+2. Portfolio System (2 files)
+
+portfolio.jsx - 7 portfolio items (grid layout)
+portfolio-detail.jsx - 7 detailed portfolio cases
+
+3. Services (2 files)
+
+services.jsx - 6 service cards
+serv-detail.jsx - Single service detail page
+
+4. About/Resume (3 files)
+
+education.jsx - 4 education entries
+workExp.jsx - 4 work experience entries
+skills.jsx - 4 technical skills
+
+5. Testimonials (1 file)
+
+testimonials.jsx - 3 client testimonials
+
+6. Contact Information (2 files)
+
+contact-info.jsx - White icon variant
+contact-info2.jsx - Accent color variant
+
+7. Social Media (4 files)
+
+social.jsx - Basic React component imports
+social2.jsx - With hover effects
+social3.jsx - Using React Icons (FA)
+social4.jsx - Custom color variants
+
+8. External Profiles (2 files)
+
+profile.jsx - Top bar hover effect
+profile2.jsx - Bottom bar hover effect
+
+9. Miscellaneous (4 files)
+
+fun-facts.jsx - 4 statistics counters
+partners.jsx - 5 partner logos
+price-table.jsx - 3 pricing plans
+bottom-links.jsx - 2 footer links

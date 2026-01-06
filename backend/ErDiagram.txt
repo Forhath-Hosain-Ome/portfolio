@@ -1,0 +1,292 @@
+erDiagram
+    %% Core Content Tables
+    PORTFOLIO_ITEMS {
+        int id PK
+        string title
+        string subtitle
+        string slug
+        text description
+        text description_extended
+        string main_image
+        string category
+        int comments_count
+        int likes_count
+        datetime created_at
+        datetime updated_at
+        boolean published
+        int display_order
+    }
+
+    BLOG_POSTS {
+        int id PK
+        string title
+        string slug
+        text excerpt
+        text content
+        text content_extended
+        string featured_image
+        int author_id FK
+        datetime published_at
+        datetime created_at
+        datetime updated_at
+        boolean published
+        int views_count
+        int comments_count
+        int likes_count
+    }
+
+    SERVICES {
+        int id PK
+        string title
+        string slug
+        text short_description
+        text full_description
+        string icon_name
+        string bg_color
+        string text_color
+        boolean featured
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    %% Taxonomy Tables
+    CATEGORIES {
+        int id PK
+        string name
+        string slug
+        string type
+        text description
+        int parent_id FK
+        datetime created_at
+    }
+
+    TAGS {
+        int id PK
+        string name
+        string slug
+        datetime created_at
+    }
+
+    %% Profile & Resume Tables
+    WORK_EXPERIENCE {
+        int id PK
+        string job_title
+        string company_name
+        string location
+        date start_date
+        date end_date
+        boolean current
+        text description
+        string company_logo
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    EDUCATION {
+        int id PK
+        string degree_title
+        string institution
+        string location
+        date start_date
+        date end_date
+        text description
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    SKILLS {
+        int id PK
+        string name
+        string icon_name
+        text description
+        int proficiency_percent
+        string category
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    %% Social & External
+    SOCIAL_LINKS {
+        int id PK
+        string platform_name
+        string profile_url
+        string icon_name
+        string display_color
+        boolean active
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    EXTERNAL_PROFILES {
+        int id PK
+        string platform_name
+        string profile_url
+        string title
+        string subtitle
+        string icon_name
+        string primary_color
+        string cta_text
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    %% Testimonials & Reviews
+    TESTIMONIALS {
+        int id PK
+        string client_name
+        string client_position
+        string client_company
+        text testimonial_text
+        string client_image
+        int rating
+        boolean featured
+        datetime created_at
+        datetime updated_at
+        int display_order
+    }
+
+    %% Media & Assets
+    MEDIA_LIBRARY {
+        int id PK
+        string filename
+        string file_path
+        string file_type
+        int file_size
+        string alt_text
+        text caption
+        string uploaded_by
+        datetime created_at
+    }
+
+    %% Site Configuration
+    SITE_SETTINGS {
+        int id PK
+        string setting_key
+        text setting_value
+        string setting_type
+        string setting_group
+        datetime updated_at
+    }
+
+    CONTACT_INFO {
+        int id PK
+        string info_type
+        string icon_name
+        string label
+        string value
+        string link_url
+        boolean active
+        int display_order
+        datetime updated_at
+    }
+
+    PARTNERS {
+        int id PK
+        string partner_name
+        string logo_default
+        string logo_hover
+        string website_url
+        boolean active
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    PRICING_PLANS {
+        int id PK
+        string plan_name
+        decimal price
+        string currency
+        string billing_period
+        text description
+        boolean featured
+        boolean active
+        int display_order
+        datetime created_at
+        datetime updated_at
+    }
+
+    PLAN_FEATURES {
+        int id PK
+        int plan_id FK
+        string feature_text
+        boolean included
+        int display_order
+    }
+
+    FUN_FACTS {
+        int id PK
+        string icon_name
+        int count_value
+        string label
+        string count_suffix
+        int display_order
+        datetime updated_at
+    }
+
+    %% Junction Tables for Many-to-Many
+    PORTFOLIO_CATEGORIES {
+        int portfolio_item_id FK
+        int category_id FK
+    }
+
+    PORTFOLIO_IMAGES {
+        int id PK
+        int portfolio_item_id FK
+        int media_id FK
+        boolean is_primary
+        int display_order
+    }
+
+    POST_CATEGORIES {
+        int post_id FK
+        int category_id FK
+    }
+
+    POST_TAGS {
+        int post_id FK
+        int tag_id FK
+    }
+
+    POST_AUTHORS {
+        int id PK
+        string name
+        string email
+        string bio
+        string avatar
+        datetime created_at
+    }
+
+    SERVICE_FEATURES {
+        int id PK
+        int service_id FK
+        string feature_text
+        int display_order
+    }
+
+    %% Relationships
+    PORTFOLIO_ITEMS ||--o{ PORTFOLIO_CATEGORIES : "has"
+    CATEGORIES ||--o{ PORTFOLIO_CATEGORIES : "categorizes"
+    
+    PORTFOLIO_ITEMS ||--o{ PORTFOLIO_IMAGES : "has"
+    MEDIA_LIBRARY ||--o{ PORTFOLIO_IMAGES : "used_in"
+    
+    BLOG_POSTS ||--o{ POST_CATEGORIES : "has"
+    CATEGORIES ||--o{ POST_CATEGORIES : "categorizes"
+    
+    BLOG_POSTS ||--o{ POST_TAGS : "has"
+    TAGS ||--o{ POST_TAGS : "tags"
+    
+    BLOG_POSTS }o--|| POST_AUTHORS : "written_by"
+    
+    SERVICES ||--o{ SERVICE_FEATURES : "has"
+    
+    PRICING_PLANS ||--o{ PLAN_FEATURES : "includes"
+    
+    CATEGORIES ||--o{ CATEGORIES : "parent_child"
