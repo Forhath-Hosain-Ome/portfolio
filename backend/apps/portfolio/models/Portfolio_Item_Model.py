@@ -1,9 +1,9 @@
-
 from django.db import models
 from django.utils.text import slugify
 from apps.core.models import TimeStampedModel, PublishableModel, OrderableModel, SEOModel
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+from apps.portfolio.models import CategoryModel, TagModel
 
 class PortfolioItemModel(TimeStampedModel, PublishableModel, OrderableModel, SEOModel):
     """Portfolio item model."""
@@ -37,11 +37,11 @@ class PortfolioItemModel(TimeStampedModel, PublishableModel, OrderableModel, SEO
     
     # Relationships
     categories = models.ManyToManyField(
-        Category,
+        CategoryModel,
         related_name='portfolio_items',
         limit_choices_to={'type': 'portfolio'}
     )
-    tags = models.ManyToManyField(Tag, related_name='portfolio_items', blank=True)
+    tags = models.ManyToManyField(TagModel, related_name='portfolio_items', blank=True)
     
     class Meta:
         ordering = ['-published_at', 'display_order']

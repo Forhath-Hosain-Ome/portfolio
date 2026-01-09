@@ -1,7 +1,6 @@
-
 from django.db import models
-from django.utils.text import slugify
-from apps.core.models import , PublishableModel, OrderableModel, SEOModel
+from apps.core.models import OrderableModel
+from apps.portfolio.models import PortfolioItemModel
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
@@ -9,7 +8,7 @@ class PortfolioImageModel(OrderableModel):
     """Additional images for portfolio items."""
     
     portfolio_item = models.ForeignKey(
-        PortfolioItem,
+        PortfolioItemModel,
         on_delete=models.CASCADE,
         related_name='additional_images'
     )

@@ -1,8 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-from apps.core.models import TimeStampedModel, PublishableModel, OrderableModel, SEOModel
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+from apps.core.models import TimeStampedModel
 
 class TagModel(TimeStampedModel):
     """Tag model for cross-referencing content."""
