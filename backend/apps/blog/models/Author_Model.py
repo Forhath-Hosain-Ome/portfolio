@@ -1,9 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from apps.core.models import TimeStampedModel, PublishableModel, SEOModel
-from apps.portfolio.models import Category, Tag
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+from apps.core.models import TimeStampedModel
 
 
 class AuthorModel(TimeStampedModel):

@@ -1,7 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.utils.text import slugify
 from apps.core.models import TimeStampedModel, PublishableModel, SEOModel
-from apps.portfolio.models import Category, Tag
+from apps.portfolio.models import TagModel, CategoryModel
+from apps.blog.models import AuthorModel
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
@@ -12,7 +13,7 @@ class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     
     # Author
-    author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name='posts')
+    author = models.ForeignKey(AuthorModel, on_delete=models.SET_NULL, null=True, related_name='posts')
     
     # Images
     featured_image = models.ImageField(upload_to='blog/%Y/%m/')
@@ -41,11 +42,11 @@ class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
     
     # Relationships
     categories = models.ManyToManyField(
-        Category,
+        CategoryModel,
         related_name='blog_posts',
         limit_choices_to={'type': 'blog'}
     )
-    tags = models.ManyToManyField(Tag, related_name='blog_posts', blank=True)
+    tags = models.ManyToManyField(TagModel, related_name='blog_posts', blank=True)
     
     class Meta:
         ordering = ['-published_at']
