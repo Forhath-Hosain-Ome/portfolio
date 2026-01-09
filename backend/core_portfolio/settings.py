@@ -3,7 +3,8 @@ from supabase import create_client, Client
 from pathlib import Path
 import os
 import socket
-from decouple import config
+from decouple import config as _envConfig
+from typing import Final
 
 original_getaddrinfo = socket.getaddrinfo
 
@@ -85,25 +86,30 @@ WSGI_APPLICATION = 'core_portfolio.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-IS_PRODUCTION = config("IS_PRODUCTION")
-supabaseUrl = config("SUPABASE_URL")
-supabaseKey = config("SUPABASE_KEY")
-supabase = create_client(supabaseUrl, supabaseKey)
+IS_PRODUCTION = _envConfig("IS_PRODUCTION", cast=bool)
+
+SUPABASE_URL: Final[str] = _envConfig("SUPABASE_URL", cast=str)
+SUPABASE_KEY: Final[str] = _envConfig("SUPABASE_KEY", cast=str)
+
+assert SUPABASE_URL, "SUPABASE_URL is missing"
+assert SUPABASE_KEY, "SUPABASE_KEY is missing"
+
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 if IS_PRODUCTION:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('DB_HOST_NAME'),
-            'USER': config('DB_USER_NAME'),
-            'PASSWORD': config('DB_HOST_PASSWORD'),
-            'HOST': config('DB_HOST_URL'),  # Pooled URL
-            'PORT': '5432',
+            'NAME': _envConfig('DB_NAME'),
+            'USER': _envConfig('DB_USER'),
+            'PASSWORD': _envConfig('DB_PASSWORD'),
+            'HOST': _envConfig('DB_HOST'),  # Pooled URL
+            'PORT': _envConfig('DB_PORT'),
             'OPTIONS': {
                 'sslmode': 'require',
                 'sslrootcert': os.path.join(BASE_DIR, 'supabase.crt'),
             },
             'CONN_MAX_AGE': 600,  # 10 minutes
-            'CONN_HEALTH_CHECKS': config('DB_HEALTH_CHECK'),
+            'CONN_HEALTH_CHECKS': _envConfig('DB_HEALTH_CHECK'),
         }
     }
 else:
@@ -113,8 +119,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
