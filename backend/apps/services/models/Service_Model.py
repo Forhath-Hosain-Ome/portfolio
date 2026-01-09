@@ -1,6 +1,6 @@
-
 from django.db import models
 from apps.core.models import TimeStampedModel, OrderableModel
+from django.utils.text import slugify
 
 
 class ServiceModel(TimeStampedModel, OrderableModel):

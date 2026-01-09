@@ -1,13 +1,13 @@
-
 from django.db import models
-from apps.core.models import TimeStampedModel, OrderableModel
+from apps.core.models import OrderableModel
+from apps.services.models import ServiceModel
 
 
 class ServiceFeatureModel(OrderableModel):
     """Features for services."""
     
     service = models.ForeignKey(
-        Service,
+        ServiceModel,
         on_delete=models.CASCADE,
         related_name='features'
     )
