@@ -26,7 +26,7 @@ class TestimonialModel(TimeStampedModel, OrderableModel):
     
     # Project reference (optional)
     related_project = models.ForeignKey(
-        'portfolio.PortfolioItem',
+        'portfolio.PortfolioItemModel',
         on_delete=models.SET_NULL,
         null=True,
         blank=True,

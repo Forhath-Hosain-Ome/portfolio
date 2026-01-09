@@ -1,6 +1,6 @@
 from django.db import models
 from apps.core.models import OrderableModel
-from apps.portfolio.models import PortfolioItemModel
+from .Portfolio_Item_Model import PortfolioItemModel
 
 class PortfolioFeatureModel(OrderableModel):
     """Features/highlights for portfolio items."""

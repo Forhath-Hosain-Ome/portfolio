@@ -1,6 +1,6 @@
 from django.db import models
 from apps.core.models import OrderableModel
-from apps.services.models import ServiceModel
+from .Service_Model import ServiceModel
 
 
 class ServiceFeatureModel(OrderableModel):

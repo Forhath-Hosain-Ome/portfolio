@@ -3,6 +3,7 @@ from supabase import create_client, Client
 from pathlib import Path
 import os
 import socket
+from decouple import config
 
 original_getaddrinfo = socket.getaddrinfo
 
@@ -42,7 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'app_portfolio.apps.AppPortfolioConfig',
+    'apps.blog.apps.BlogConfig',
+    'apps.core.apps.CoreConfig',
+    'apps.portfolio.apps.PortfolioConfig',
+    'apps.resume.apps.ResumeConfig',
+    'apps.services.apps.ServicesConfig',
+    'apps.site_config.apps.SiteConfigConfig',
+    'apps.testimonials.apps.TestimonialsConfig',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +81,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core_portfolio.wsgi.application'
 
-AUTH_USER_MODEL= 'app_portfolio.UserModel'
+# AUTH_USER_MODEL= 'app_portfolio.UserModel'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

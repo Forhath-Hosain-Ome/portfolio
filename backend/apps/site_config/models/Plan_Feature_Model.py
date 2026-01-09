@@ -1,11 +1,12 @@
 from django.db import models
-from apps.core.models import TimeStampedModel, OrderableModel
+from apps.core.models import OrderableModel
+from .Pricing_Plan_Model import PricingPlanModel
 
 class PlanFeatureModel(OrderableModel):
     """Features for pricing plans."""
     
     plan = models.ForeignKey(
-        PricingPlan,
+        PricingPlanModel,
         on_delete=models.CASCADE,
         related_name='features'
     )

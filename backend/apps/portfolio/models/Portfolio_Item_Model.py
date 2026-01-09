@@ -3,7 +3,8 @@ from django.utils.text import slugify
 from apps.core.models import TimeStampedModel, PublishableModel, OrderableModel, SEOModel
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
-from apps.portfolio.models import CategoryModel, TagModel
+from .Category_Model import CategoryModel
+from .Tag_Model import TagModel
 
 class PortfolioItemModel(TimeStampedModel, PublishableModel, OrderableModel, SEOModel):
     """Portfolio item model."""

@@ -1,8 +1,6 @@
 from django.db import models
 from apps.core.models import OrderableModel
-from apps.portfolio.models import PortfolioItemModel
-from imagekit.models import ImageSpecField
-from imagekit.processors import ResizeToFill
+from .Portfolio_Item_Model import PortfolioItemModel
 
 class PortfolioImageModel(OrderableModel):
     """Additional images for portfolio items."""
