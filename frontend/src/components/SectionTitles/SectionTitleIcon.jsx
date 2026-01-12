@@ -1,4 +1,5 @@
-import { ReactComponent as EducationIcon } from "../../lib/icons/Mortarboard.svg";
+import { react } from '@vitejs/plugin-react';
+import { ReactComponent as EducationIcon } from "../../lib/icons/Mortarboard.svg?react";
 
 const SectionTitleIcon = (props) => {
   return (

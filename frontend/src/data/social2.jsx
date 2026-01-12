@@ -1,6 +1,6 @@
-import FacebookIcon  from "../lib/icons/Facebook.svg";
-import TumblrIcon from "../lib/icons/Tumblr.svg";
-import TwitterIcon from "../lib/icons/Twitter.svg";
+import FacebookIcon  from "../lib/icons/Facebook.svg?react";
+import TumblrIcon from "../lib/icons/Tumblr.svg?react";
+import TwitterIcon from "../lib/icons/Twitter.svg?react";
 
 export const social2 = [
   {

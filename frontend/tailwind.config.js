@@ -19,7 +19,7 @@ export default {
       dark3: "#101431",
       gray: "#f7f0fe",
       white: "#ffffff",
-      black: "#00000",
+      black: "#000000",
       accent: "#284be5",
       accent2: "#232a60",
       shapBg: "#eeeffa",
@@ -65,7 +65,7 @@ export default {
     },
     extend: {
       boxShadow: {
-        '3xl': '0 0 3.125remrgba(0, 0, 0, 0.13)',
+        '3xl': '0 0 3.125rem rgba(0, 0, 0, 0.13)',
       }
     },
     scrollbar: ["rounded"],

@@ -12,4 +12,18 @@ export default defineConfig({
     }),
     react(),
   ],
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom'],
+  },
+  server: {
+    middlewareMode: false,
+    force: true,
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      }
+    }
+  }
 })

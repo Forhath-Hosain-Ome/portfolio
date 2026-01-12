@@ -1,42 +1,35 @@
 import { useState, useEffect } from 'react';
-import NavBar from './components/NavBar';
-import Preloader from './components/Preloader';
-import FooterSection from './components/FooterSection';
-import HomePage from './pages/HomePage'
-import Header from './components/Header/Header';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import RouterLinks from "./router/Routes.jsx";
+import { PushSpinner  } from "react-spinners-kit";
+
+// import Preloader from './components/Preloader';
+// import HomePage from './pages/HomePage'
+// import Header2 from './components/Header/Header2';
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
-
-  const [isLoading, setIsLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
     }, 2000);
-
-    return () => clearTimeout(timer);
   }, []);
   
   return (
     <>
-      {isLoading ? (
-        <Preloader />
+      {loading ? (
+        <div className="pageLoader fixed justify-center items-center inset-0 flex">
+          <PushSpinner 
+            className="bg-accent"
+            size={60}
+            color="#284be5"
+          ></PushSpinner>
+        </div>
       ) : (
-          <>
-          <BrowserRouter>
-            <Header /> {/* Header component contains <Link> */}
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              {/* <Route path="/about" element={<AboutPage />} /> */}
-            </Routes>
-          </BrowserRouter>
-            {/* <Header/>
-            <NavBar />
-            <HomePage />
-            <FooterSection /> */}
-          </>
+        <RouterLinks></RouterLinks>
       )}
     </>
   )
