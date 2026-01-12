@@ -1,0 +1,140 @@
+1. User
+This model represents the user (you, the portfolio owner).
+    id (Primary Key)
+    name (String)
+    email (String)
+    bio (Text)
+    profile_picture (URL)
+    social_links (JSON - Links to social profiles like LinkedIn, GitHub, etc.)
+
+2. Project
+A model for each project you want to showcase.
+
+    id (Primary Key)
+    user_id (Foreign Key to User) — Represents the portfolio owner.
+    title (String) — The project title.
+    description (Text) — A detailed description of the project.
+    slug (String) — Unique URL-friendly identifier (for SEO).
+    technologies (JSON) — List of technologies used (e.g., React, Node.js, etc.).
+    project_url (String) — URL to the live project (optional).
+    github_url (String) — URL to the project's GitHub repo (optional).
+    image_url (String) — A cover image URL.
+    status (Enum: Completed, In Progress, Archived)
+    created_at (DateTime)
+    updated_at (DateTime)
+
+3. Testimonial
+This model represents client or user testimonials.
+
+    id (Primary Key)
+    user_id (Foreign Key to User) — Represents the portfolio owner.
+    author_name (String) — Name of the person giving the testimonial.
+    author_title (String) — Their title/position.
+    testimonial (Text) — The content of the testimonial.
+    created_at (DateTime)
+    updated_at (DateTime)
+
+4. Skill
+A model to store the skills you want to showcase.
+
+    id (Primary Key)    
+    user_id (Foreign Key to User) — Represents the portfolio owner.
+    name (String) — Name of the skill (e.g., JavaScript, React).
+    category (Enum: Frontend, Backend, DevOps, Design, Soft Skills, etc.) — Classify skills into categories.
+    proficiency (Integer, 1–10 scale) — How proficient you are in the skill.
+    created_at (DateTime)
+    updated_at (DateTime)
+
+5. Education
+
+A model for your educational background.
+
+    id (Primary Key)
+    user_id (Foreign Key to User) — Represents the portfolio owner.
+    institution_name (String) — The name of the educational institution.
+    degree (String) — Degree obtained (e.g., Bachelor's in Computer Science).
+    field_of_study (String) — The field you studied (e.g., Computer Science, Design).
+    start_date (DateTime)
+    end_date (DateTime)
+    grade (String) — Optional (e.g., GPA, Honors).
+    created_at (DateTime)
+    updated_at (DateTime)
+
+6. Blog Post
+
+If you want to include a blog section in your portfolio, this model can represent each post.
+
+    id (Primary Key)
+    user_id (Foreign Key to User) — Represents the portfolio owner.
+    title (String) — The blog post title.
+    slug (String) — Unique identifier for the blog post (URL-friendly).
+    content (Text) — The main body of the blog post.
+    tags (JSON) — List of tags to categorize the post (e.g., React, JavaScript).
+    published (Boolean) — Whether the post is published or in draft mode.
+    published_at (DateTime)
+    created_at (DateTime)
+    updated_at (DateTime)
+
+7. Contact Form Submission
+
+A model for storing messages from visitors (e.g., inquiries or job offers).
+
+    id (Primary Key)
+    name (String) — Name of the person who submitted the form.
+    email (String) — Their email address.
+    message (Text) — The content of the message.
+    read (Boolean) — Whether the message has been read by the portfolio owner.
+    created_at (DateTime)
+    updated_at (DateTime)
+
+8. Certification
+
+A model for any certifications you have earned.
+
+    id (Primary Key)
+    user_id (Foreign Key to User) — Represents the portfolio owner.
+    title (String) — Name of the certification.
+    organization (String) — The issuing organization.
+    date_issued (DateTime)
+    expiration_date (DateTime, optional)
+    credential_url (String, optional) — URL to verify the certification.
+    created_at (DateTime)
+    updated_at (DateTime)
+
+9. Social Link
+
+A model to store social media links.
+
+    id (Primary Key)
+    user_id (Foreign Key to User) — Represents the portfolio owner.
+    platform (Enum: LinkedIn, GitHub, Twitter, Instagram, etc.)
+    url (String) — The full URL to the social profile.
+    created_at (DateTime)
+    updated_at (DateTime)
+
+Relationships Between Models:
+
+One-to-Many:
+
+    A User can have many Projects, Testimonials, Skills, Blog Posts, Education, Certifications, and Social Links.
+    A User has many Skills and Testimonies that can be showcased on the portfolio.
+
+Many-to-One:
+
+    Projects, Testimonials, Skills, Blog Posts, Certifications, and Social Links all reference a User via user_id.
+
+One-to-Many (Self-Referencing):
+
+    A Blog Post can have multiple comments or reactions, if you want a comment section.
+    Potential Advanced Features (Optional):
+    Portfolio Categories: You could add a Category model to group projects (e.g., Web Development, Mobile Apps, UI/UX Design).
+    Awards & Honors: Another model to represent awards or recognitions you've received, related to your skills or projects.
+
+Example Diagram for Relationships:
+
+    User (1) <--> (Many) Projects
+    User (1) <--> (Many) Testimonial
+    User (1) <--> (Many) Skill
+    User (1) <--> (Many) Blog Post
+    User (1) <--> (Many) Education
+    User (1) <--> (Many) Social Link
