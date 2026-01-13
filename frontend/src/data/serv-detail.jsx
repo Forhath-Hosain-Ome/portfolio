@@ -5,12 +5,12 @@ import ServImg4 from "../assets/images/resources/servDetailImg1-4.jpg";
 import ServImg5 from "../assets/images/resources/servDetailImg1-5.jpg";
 import ServImg6 from "../assets/images/resources/servDetailImg1-6.jpg";
 
-import { ReactComponent as UiCreativeDesignIcon } from "../lib/icons/Curve.svg";
-import { ReactComponent as DesktopApplicationIcon } from "../lib/icons/InformationService.svg";
-import { ReactComponent as WebDevelopmentIcon } from "../lib/icons/Monitor.svg";
-import { ReactComponent as WireframingServiceIcon } from "../lib/icons/WebProgramming.svg";
-import { ReactComponent as StrategyIcon } from "../lib/icons/Strategy.svg";
-import { ReactComponent as TranslationIcon } from "../lib/icons/Translation.svg";
+import { ReactComponent as UiCreativeDesignIcon } from "../lib/icons/Curve.svg?react";
+import { ReactComponent as DesktopApplicationIcon } from "../lib/icons/InformationService.svg?react";
+import { ReactComponent as WebDevelopmentIcon } from "../lib/icons/Monitor.svg?react";
+import { ReactComponent as WireframingServiceIcon } from "../lib/icons/WebProgramming.svg?react";
+import { ReactComponent as StrategyIcon } from "../lib/icons/Strategy.svg?react";
+import { ReactComponent as TranslationIcon } from "../lib/icons/Translation.svg?react";
 
 export const servDetail = [
   {

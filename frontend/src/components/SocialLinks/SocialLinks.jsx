@@ -14,7 +14,6 @@ const SocialLinks = () => {
             console.error('IconComponent is not a function:', IconComponent);
             return null;
           }
-          else console.log("Hello")
           return (
               <a
                 className="inline-block"

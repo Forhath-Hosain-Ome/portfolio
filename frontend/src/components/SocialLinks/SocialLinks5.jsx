@@ -9,7 +9,6 @@ const SocialLinks5 = () => {
           console.error('IconComponent is not a function:', IconComponent);
           return null;
         }
-        else console.log("Hello")
         return (
             <a
               className={item.socialClass}

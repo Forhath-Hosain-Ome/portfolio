@@ -8,7 +8,7 @@ import { FreelanceWork3 } from "../../components/FreelanceWork";
 import { Header2 } from "../../components/Header";
 import { PageTitle } from "../../components/PageTitle";
 import { Pagination2 } from "../../components/Pagination";
-import RightDownIcon from "../../lib/icons/RightDown.svg";
+import RightDownIcon from "../../lib/icons/RightDown.svg?react";
 import { portfolio } from "../../data/portfolio";
 import { FiChevronDown } from "react-icons/fi";
 

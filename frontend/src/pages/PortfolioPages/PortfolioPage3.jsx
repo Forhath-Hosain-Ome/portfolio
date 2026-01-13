@@ -6,7 +6,7 @@ import { ContactUs2 } from "../../components/ContactUs";
 import { FreelanceWork3 } from "../../components/FreelanceWork";
 import { Header2 } from "../../components/Header";
 import { PageTitle } from "../../components/PageTitle";
-import RightDownIcon from "../../lib/icons/RightDown.svg";
+import RightDownIcon from "../../lib/icons/RightDown.svg?react";
 import { Link } from "react-router-dom";
 import { FiChevronDown } from "react-icons/fi";
 
