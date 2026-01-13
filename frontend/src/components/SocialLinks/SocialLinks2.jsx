@@ -20,7 +20,6 @@ const SocialLinks2 = () => {
                 rel="noreferrer"
               >
                 <IconComponent className="h-7 w-7 md:h-10 md:w-10 fill-white hover:fill-accent2" />
-                {/* {item.socialIcon} */}
               </a>
             )
         }

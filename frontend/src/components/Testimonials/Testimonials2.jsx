@@ -4,8 +4,8 @@ import PatternImg2 from "../../assets/images/patternImg2.jpg";
 import SectionBg from "../../assets/images/secBg4.jpg";
 import { testimonials } from "../../data/testimonials";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
-import LeftQuoteSignIcon from "../../lib/icons/LeftQuoteSign.svg";
-import RightQuoteSignIcon from "../../lib/icons/RightQuoteSign.svg";
+import LeftQuoteSignIcon from "../../lib/icons/LeftQuoteSign.svg?react";
+import RightQuoteSignIcon from "../../lib/icons/RightQuoteSign.svg?react";
 
 import "slick-carousel/slick/slick.css";
 

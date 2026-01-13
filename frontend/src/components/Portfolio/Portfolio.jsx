@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PatternImg from "../../assets/images/patternImg.jpg";
-import RightDownIcon from "../../lib/icons/RightDown.svg";
+import RightDownIcon from "../../lib/icons/RightDown.svg?react";
 import { portfolio } from "../../data/portfolio";
 import { SectionTitle } from "../SectionTitles";
 

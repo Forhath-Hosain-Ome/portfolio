@@ -1,6 +1,6 @@
 import VideoImg from "../../assets/images/resources/videoImg.jpg";
 import Fancybox from "../../fancybox";
-import PlayIcon from "../../lib/icons/Play.svg";
+import PlayIcon from "../../lib/icons/Play.svg?react";
 
 const VideoBox = () => {
   return (

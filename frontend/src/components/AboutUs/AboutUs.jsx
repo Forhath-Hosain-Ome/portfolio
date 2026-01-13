@@ -3,7 +3,7 @@ import PatternImg2 from "../../assets/images/patternImg2.jpg";
 import AboutUsBg from "../../assets/images/secBg.jpg";
 import { SectionTitle } from "../SectionTitles";
 import AboutImg from "../../assets/images/resources/aboutImg.jpg";
-import Signature from "../../lib/icons/Signature.svg";
+import Signature from "../../lib/icons/Signature.svg?react";
 import { GoDotFill } from "react-icons/go";
 
 const AboutUs = (props) => {
