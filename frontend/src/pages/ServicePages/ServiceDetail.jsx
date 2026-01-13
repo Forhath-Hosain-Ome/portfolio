@@ -9,8 +9,8 @@ import { PageTitle } from "../../components/PageTitle";
 import { Partners2 } from "../../components/Partners";
 import { SocialLinks5 } from "../../components/SocialLinks";
 
-import { ReactComponent as CheckMark } from "../../lib/icons/CheckMark.svg";
-import { ReactComponent as UiCreativeDesignIcon } from "../../lib/icons/Curve.svg";
+import CheckMark from "../../lib/icons/CheckMark.svg";
+import UiCreativeDesignIcon from "../../lib/icons/Curve.svg";
 
 import PatternImg2 from "../../assets/images/patternImg2.jpg";
 import ServImg1 from "../../assets/images/resources/servDetailImg1-1.jpg";

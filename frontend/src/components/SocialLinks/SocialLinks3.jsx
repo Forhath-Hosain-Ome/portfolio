@@ -7,9 +7,14 @@ const SocialLinks3 = () => {
         Follow Me
       </h5>
       <div className="socialLinks flex items-center gap-[5px]">
-        {social.map(
-          (item, index) =>
-            index < 3 && (
+        {social.slice(0, 3).map((item, index) =>{
+          const IconComponent = item.socialIcon;
+          if (typeof IconComponent !== 'function') {
+            console.error('IconComponent is not a function:', IconComponent);
+            return null;
+          }
+          else console.log("Hello")
+          return (
               <a
                 className="inline-block"
                 href={item.socialLink}
@@ -18,9 +23,11 @@ const SocialLinks3 = () => {
                 key={index}
                 rel="noreferrer"
               >
-                {item.socialIcon}
+                <IconComponent className="h-7 w-7 md:h-10 md:w-10 fill-white hover:fill-accent2" />
+                {/* {item.socialIcon} */}
               </a>
             )
+          }
         )}
         {/* Social Links */}
       </div>

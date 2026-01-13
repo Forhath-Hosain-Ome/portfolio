@@ -3,8 +3,8 @@ import PatternImg2 from "../../assets/images/patternImg2.jpg";
 import AboutUsBg from "../../assets/images/secBg.jpg";
 import { SectionTitle } from "../SectionTitles";
 import AboutImg from "../../assets/images/resources/aboutImg.jpg";
-import { ReactComponent as Signature } from "../../lib/icons/Signature.svg";
-import { GoPrimitiveDot } from "react-icons/go";
+import Signature from "../../lib/icons/Signature.svg";
+import { GoDotFill } from "react-icons/go";
 
 const AboutUs = (props) => {
   return (
@@ -101,10 +101,10 @@ const AboutUs = (props) => {
                         Freelancer:
                       </strong>
                       <span className="text-desc2 font-semibold font-NunitoSans col-span-2 uppercase flex items-center">
-                        <GoPrimitiveDot
+                        <GoDotFill
                           size="1.5rem"
                           className="fill-accent"
-                        ></GoPrimitiveDot>
+                        ></GoDotFill>
                         Available
                       </span>
                     </li>

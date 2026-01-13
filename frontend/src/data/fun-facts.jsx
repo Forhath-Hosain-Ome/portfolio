@@ -1,7 +1,7 @@
-import { ReactComponent as HappyCustomersIcon } from "../lib/icons/HappyCustomers.svg";
-import { ReactComponent as FinishedProjectsIcon } from "../lib/icons/FinishedProjects.svg";
-import { ReactComponent as CoffeeCupIcon } from "../lib/icons/CoffeeCup.svg";
-import { ReactComponent as WorkingHoursIcon } from "../lib/icons/WorkingHours.svg";
+import HappyCustomersIcon from "../lib/icons/HappyCustomers.svg?react";
+import FinishedProjectsIcon from "../lib/icons/FinishedProjects.svg?react";
+import CoffeeCupIcon from "../lib/icons/CoffeeCup.svg?react";
+import WorkingHoursIcon from "../lib/icons/WorkingHours.svg?react";
 
 export const funFacts = [
   {

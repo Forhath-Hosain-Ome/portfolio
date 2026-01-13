@@ -1,6 +1,6 @@
-import { ReactComponent as HomeIcon } from "../lib/icons/Home.svg";
-import { ReactComponent as EnvelopeIcon } from "../lib/icons/Envelope.svg";
-import { ReactComponent as PhoneIcon } from "../lib/icons/Phone.svg";
+import HomeIcon from "../lib/icons/Home.svg?react";
+import EnvelopeIcon from "../lib/icons/Envelope.svg?react";
+import PhoneIcon from "../lib/icons/Phone.svg?react";
 
 export const conInfo = [
   {

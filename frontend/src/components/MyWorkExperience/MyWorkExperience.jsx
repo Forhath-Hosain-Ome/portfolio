@@ -1,5 +1,5 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { SectionTitleLight } from "../SectionTitles";
 import PatternImg2 from "../../assets/images/patternImg2.jpg";
 import SectionBg from "../../assets/images/secBg2.jpg";

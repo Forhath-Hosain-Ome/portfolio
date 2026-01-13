@@ -1,9 +1,9 @@
-import { ReactComponent as UiCreativeDesignIcon } from "../lib/icons/Curve.svg";
-import { ReactComponent as DesktopApplicationIcon } from "../lib/icons/InformationService.svg";
-import { ReactComponent as WebDevelopmentIcon } from "../lib/icons/Monitor.svg";
-import { ReactComponent as WireframingServiceIcon } from "../lib/icons/WebProgramming.svg";
-import { ReactComponent as StrategyIcon } from "../lib/icons/Strategy.svg";
-import { ReactComponent as TranslationIcon } from "../lib/icons/Translation.svg";
+import UiCreativeDesignIcon from "../lib/icons/Curve.svg?react";
+import DesktopApplicationIcon from "../lib/icons/InformationService.svg?react";
+import WebDevelopmentIcon from "../lib/icons/Monitor.svg?react";
+import WireframingServiceIcon from "../lib/icons/WebProgramming.svg?react";
+import StrategyIcon from "../lib/icons/Strategy.svg?react";
+import TranslationIcon from "../lib/icons/Translation.svg?react";
 
 export const services = [
   {

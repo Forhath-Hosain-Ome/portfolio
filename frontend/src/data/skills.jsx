@@ -1,7 +1,7 @@
-import { ReactComponent as JavaScriptIcon } from "../lib/icons/JavaScript.svg";
-import { ReactComponent as HtmlIcon } from "../lib/icons/Html.svg";
-import { ReactComponent as PhotoshopIcon } from "../lib/icons/Photoshop.svg";
-import { ReactComponent as WordPressIcon } from "../lib/icons/WordPress.svg";
+import JavaScriptIcon from "../lib/icons/JavaScript.svg?react";
+import HtmlIcon from "../lib/icons/Html.svg?react";
+import PhotoshopIcon from "../lib/icons/Photoshop.svg?react";
+import WordPressIcon from "../lib/icons/WordPress.svg?react";
 
 export const skills = [
   {

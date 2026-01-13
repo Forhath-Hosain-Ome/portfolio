@@ -1,6 +1,6 @@
-import { ReactComponent as DribbbleIcon } from "../lib/icons/Dribbble.svg";
-import { ReactComponent as BehanceIcon } from "../lib/icons/Behance.svg";
-import { ReactComponent as SkypeIcon } from "../lib/icons/Skype.svg";
+import DribbbleIcon from "../lib/icons/Dribbble.svg?react";
+import BehanceIcon from "../lib/icons/Behance.svg?react";
+import SkypeIcon from "../lib/icons/Skype.svg?react";
 
 export const profile2 = [
   {

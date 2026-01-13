@@ -1,8 +1,8 @@
 import PatternImg2 from "../../assets/images/patternImg2.jpg";
 import SectionBg from "../../assets/images/secBg6.jpg";
 import AboutImg from "../../assets/images/resources/aboutImg.jpg";
-import { ReactComponent as Signature } from "../../lib/icons/Signature.svg";
-import { GoPrimitiveDot } from "react-icons/go";
+import Signature from "../../lib/icons/Signature.svg?react";
+import { GoDotFill } from "react-icons/go";
 
 const AboutUs2 = () => {
   return (
@@ -90,10 +90,10 @@ const AboutUs2 = () => {
                       Freelancer:
                     </strong>
                     <span className="text-desc font-semibold font-NunitoSans col-span-2 uppercase flex items-center">
-                      <GoPrimitiveDot
+                      <GoDotFill
                         size="1.5rem"
                         className="fill-accent"
-                      ></GoPrimitiveDot>
+                      ></GoDotFill>
                       Available
                     </span>
                   </li>
