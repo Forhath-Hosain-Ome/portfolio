@@ -1,7 +1,7 @@
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import { useState, useEffect } from 'react';
 import RouterLinks from "./router/Routes.jsx";
-
+import { HelmetProvider } from 'react-helmet-async'
 
 import { 
   CircleLoader,
@@ -36,7 +36,9 @@ function App() {
           ></PulseLoader>
         </div>
       ) : (
-        <RouterLinks></RouterLinks>
+        <HelmetProvider>
+          <RouterLinks></RouterLinks>
+        </HelmetProvider>
       )}
     </>
   )

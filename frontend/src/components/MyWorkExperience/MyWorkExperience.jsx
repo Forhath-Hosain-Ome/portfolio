@@ -69,7 +69,8 @@ const MyWorkExperience = () => {
                     ></div>
                     <div className="grid gap-[1.875rem] xl:grid-cols-2 lg:grid-cols-1 grid-cols-1 items-center">
                       <div className="gridItem xl:order-1">
-                        <div className="expImg relative overflow-hidden rounded-[10px] sm:rounded-[1.25rem] lg:rounded-[1.875rem] xl:rounded-[3.125rem] max-h-[14rem] opacity-0">
+                        <div className="expImg relative overflow-hidden rounded-[10px] sm:rounded-[1.25rem] lg:rounded-[1.875rem] xl:rounded-[3.125rem] max-h-[14rem]">
+                        {/* <div className="expImg relative overflow-hidden rounded-[10px] sm:rounded-[1.25rem] lg:rounded-[1.875rem] xl:rounded-[3.125rem] max-h-[14rem] opacity-0"> */}
                           <img
                             className="w-full"
                             src={item.expImg}

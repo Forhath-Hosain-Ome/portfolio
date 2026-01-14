@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { Helmet } from "react-helmet-async";
 import { AboutUs2 } from "../../components/AboutUs";
 import { Education2 } from "../../components/Education";
