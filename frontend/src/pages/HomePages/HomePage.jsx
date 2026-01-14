@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Header } from "../../components/Header";
 import { FeaturedArea } from "../../components/FeaturedArea";
 import { AboutUs } from "../../components/AboutUs";

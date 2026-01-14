@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { FiHeart } from "react-icons/fi";
 import { BiCommentDetail } from "react-icons/bi";
 import { Link } from "react-router-dom";

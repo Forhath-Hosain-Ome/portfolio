@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { posts2 } from "../../data/posts2";
 import { BottomBar2 } from "../../components/BottomBar";

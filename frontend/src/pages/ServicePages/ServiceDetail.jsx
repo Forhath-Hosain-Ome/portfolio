@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { BottomBar2 } from "../../components/BottomBar";
 import { ContactInfoProfiles3 } from "../../components/ContactInfoProfiles";
 import { ContactUs2 } from "../../components/ContactUs";
