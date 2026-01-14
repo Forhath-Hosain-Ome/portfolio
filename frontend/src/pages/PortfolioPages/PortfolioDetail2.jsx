@@ -45,7 +45,7 @@ const PortfolioDetail = () => {
       ></PageTitle>
       <section className="pageWrap pt-[3.5rem] md:pt-[3.5rem] lg:pt-[6.875rem] relative w-full">
         <div className="container sm:container md:container lg:container xl:max-w-[73.125rem] mx-auto">
-          {portfolio ? (
+          {console.log("portfolio:", portfolio) || portfolio ? (
             <div className="portDetail relative w-full">
               <div className="portDetailImage relative rounded-[10px] sm:rounded-[1.25rem] md:rounded-[3.125rem] overflow-hidden">
                 <img
