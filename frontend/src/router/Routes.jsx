@@ -15,7 +15,7 @@ const RouterLinks = () => {
         <SmoothScroll>
           <Routes>
             <Route path="/" element={<HomePage></HomePage>} />
-            <Route path="/home2" element={<HomePage2></HomePage2>} />
+            {/* <Route path="/home2" element={<HomePage2></HomePage2>} /> */}
             <Route path="/blog" element={<BlogPage></BlogPage>} />
             <Route path="/blog/:Id" element={<BlogDetail></BlogDetail>} />
             <Route path="/blog2" element={<BlogPage2></BlogPage2>} />

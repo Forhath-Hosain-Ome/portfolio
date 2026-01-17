@@ -3,18 +3,14 @@ import * as FiIcons from "react-icons/fi";
 export const MenuData = [
   {
     title: "Home",
-    path: "#",
+    path: "/",
     iconClosed: <FiIcons.FiChevronDown className="text-white" />,
     iconOpened: <FiIcons.FiChevronUp className="text-white" />,
     subNav: [
       {
         title: "Homepage 1",
         path: "/",
-      },
-      {
-        title: "Homepage 2",
-        path: "/home2",
-      },
+      }
     ],
   },
   {
