@@ -4,7 +4,7 @@ import { BottomBar2 } from "../../components/BottomBar";
 import { ContactUs2 } from "../../components/ContactUs";
 import { FreelanceWork2 } from "../../components/FreelanceWork";
 import { FunFacts2 } from "../../components/FunFacts";
-import { Header2 } from "../../components/Header";
+import { Header } from "../../components/Header";
 import { PageTitle } from "../../components/PageTitle";
 import { Partners2 } from "../../components/Partners";
 import { PriceTable } from "../../components/PriceTable";
@@ -15,7 +15,7 @@ const PlansPage = () => {
       <Helmet>
         <title>Pricing Plans - Fastone Personal Portfolio or CV/Resume React App</title>
       </Helmet>
-      <Header2></Header2>
+      <Header></Header>
       <PageTitle
         title="Pricing Plan"
         hometitle="Home"

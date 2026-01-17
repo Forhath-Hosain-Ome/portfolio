@@ -8,7 +8,7 @@ export const MenuData = [
     iconOpened: <FiIcons.FiChevronUp className="text-white" />,
     subNav: [
       {
-        title: "Homepage 1",
+        title: "Homepage",
         path: "/",
       }
     ],

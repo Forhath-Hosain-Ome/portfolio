@@ -10,7 +10,7 @@ import { BottomBar2 } from "../../components/BottomBar";
 import { ContactInfoProfiles3 } from "../../components/ContactInfoProfiles";
 import { ContactUs2 } from "../../components/ContactUs";
 import { FreelanceWork3 } from "../../components/FreelanceWork";
-import { Header2 } from "../../components/Header";
+import { Header } from "../../components/Header";
 import { PageTitle } from "../../components/PageTitle";
 import { Partners2 } from "../../components/Partners";
 import { ReplyForm } from "../../components/ReplyForm";
@@ -37,7 +37,7 @@ const PortfolioDetail = () => {
           Portfolio Detail - Fastone Personal Portfolio or CV/Resume React App
         </title>
       </Helmet>
-      <Header2></Header2>
+      <Header></Header>
       <PageTitle
         title="Portfolio Detail"
         hometitle="Home"

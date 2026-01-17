@@ -19,7 +19,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <Helmet>
-        <title>Home - Fastone Personal Portfolio or CV/Resume React App</title>
+        <title>Forhath Hosain Ome - Home</title>
       </Helmet>
       <Header></Header>
       <FeaturedArea></FeaturedArea>

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { FaHome } from "react-icons/fa";
 import { BottomBar2 } from "../../components/BottomBar";
 import { ContactUs2 } from "../../components/ContactUs";
-import { Header2 } from "../../components/Header";
+import { Header } from "../../components/Header";
 import { PageTitle } from "../../components/PageTitle";
 import { Partners2 } from "../../components/Partners";
 import { FiSearch } from "react-icons/fi";
@@ -18,7 +18,7 @@ const ErrorPage = () => {
           Error Page - Fastone Personal Portfolio or CV/Resume React App
         </title>
       </Helmet>
-      <Header2></Header2>
+      <Header></Header>
       <PageTitle
         title="404 Error"
         hometitle="Home"

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { BottomBar2 } from "../../components/BottomBar";
 import { ContactInfoProfiles2 } from "../../components/ContactInfoProfiles";
 import { ContactUs } from "../../components/ContactUs";
-import { Header2 } from "../../components/Header";
+import { Header } from "../../components/Header";
 import { PageTitle } from "../../components/PageTitle";
 
 const ContactPage = () => {
@@ -12,7 +12,7 @@ const ContactPage = () => {
       <Helmet>
         <title>Contact - Fastone Personal Portfolio or CV/Resume React App</title>
       </Helmet>
-      <Header2></Header2>
+      <Header></Header>
       <PageTitle
         title="Contact Me"
         hometitle="Home"
