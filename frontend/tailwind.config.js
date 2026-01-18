@@ -75,4 +75,10 @@ export default {
     // require("@tailwindcss/forms"),
     // require("tailwind-scrollbar"),
   ],
+  safelist: [
+    'masonry',
+    'masonry-sm', 
+    'masonry-md',
+    'break-inside'
+  ]
 };

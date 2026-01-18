@@ -7,7 +7,6 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 
 class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
-    """Blog post model."""
     
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
@@ -24,7 +23,6 @@ class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
         options={'quality': 85}
     )
     
-    # Content
     excerpt = models.TextField(max_length=300)
     content = models.TextField()
     content_extended = models.TextField(blank=True)

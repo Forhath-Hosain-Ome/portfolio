@@ -13,5 +13,10 @@ export default defineConfig({
         // ... other svgr options
       },
     }),
+    
   ],
+  build: {
+    minify: false,
+    cssMinify: false,
+  }
 })
