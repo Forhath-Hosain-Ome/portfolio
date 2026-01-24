@@ -1,8 +1,8 @@
 from django.db import models
-from apps.core.models import OrderableModel
+from apps.core.models import OrderableModel, TimeStampedModel
 from .Pricing_Plan_Model import PricingPlanModel
 
-class PlanFeatureModel(OrderableModel):
+class PlanFeatureModel(TimeStampedModel, OrderableModel):
     """Features for pricing plans."""
     
     plan = models.ForeignKey(

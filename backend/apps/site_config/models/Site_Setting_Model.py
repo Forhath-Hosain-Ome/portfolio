@@ -1,7 +1,7 @@
 from django.db import models
+from apps.core.models import TimeStampedModel, OrderableModel
 
-
-class SiteSettingModel(models.Model):
+class SiteSettingModel(TimeStampedModel, OrderableModel):
     """Site-wide settings model."""
     
     SETTING_TYPES = (
@@ -25,7 +25,6 @@ class SiteSettingModel(models.Model):
     setting_type = models.CharField(max_length=20, choices=SETTING_TYPES, default='text')
     setting_group = models.CharField(max_length=20, choices=SETTING_GROUPS, default='general')
     description = models.TextField(blank=True)
-    updated_at = models.DateTimeField(auto_now=True)
     
     class Meta:
         ordering = ['setting_group', 'setting_key']
