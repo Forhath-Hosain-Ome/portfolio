@@ -1,9 +1,23 @@
 from django.contrib import admin
-from apps.blog.models import BlogPostModel
+from apps.testimonials.models import TestimonialModel
+@admin.register(TestimonialModel)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = (
+        "client_name",
+        "client_position",
+        "client_company",
+        "client_image",
+        "testimonial_text",
+        "rating",
+        "is_featured",
+        "is_active",
+        "related_project"
+    )
 
-@admin.register(BlogPostModel)
-class BlogPostAdmin(admin.ModelAdmin):
+    list_display_links = ("client_company",)
+
     list_filter = (
+        "rating",
         "is_active",
         "created_at",
         "updated_at",
@@ -16,49 +30,23 @@ class BlogPostAdmin(admin.ModelAdmin):
 
     ordering = ("-created_at",)
 
+    search_fields = (
+        "client_name",
+        "client_position",
+        "client_company",
+        "client_image",
+    )
+
+    search_help_text = "Search by client name"
+
     readonly_fields = (
-        "thumbnail",
         "created_at",
         "updated_at",
     )
 
-    list_display = (
-        "title",
-        "slug",
-        "featured_image",
-        "excerpt",
-        "content",
-        "content_extended",
-        "read_time_minutes",
-        "views_count",
-        "likes_count",
-        "comments_count",
-        "is_featured",
-        "is_active"
-    )
-
-    list_display_links = ("title", "slug", "is_featured")
-
-    search_fields = (
-        "title",
-        "categories",
-        "tags",
-    )
-
-    search_help_text = "Search by title, category or tag"
-
     fieldsets = (
-        ("Blog Information", {
-            "fields": ("title", "slug", "author",),
-        }),
-        ("Media", {
-            "fields": ("featured_image",),
-        }),
-        ("Content", {
-            "fields": ("excerpt", "content", "content_extended",),
-        }),
-        ("Utility Data", {
-            "fields": ("read_time_minutes", "views_count", "likes_count", "comments_count",),
+        ("Author Information", {
+            "fields": ("client_name", "client_position", "client_company", "client_image"),
         }),
         ("Status", {
             "fields": ("is_active",),
