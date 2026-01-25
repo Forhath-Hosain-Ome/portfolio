@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     'corsheaders',
     'rest_framework',
+    "django_filters",
 
     'apps.blog.apps.BlogConfig',
     'apps.core.apps.CoreConfig',
@@ -66,6 +67,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+REST_FRAMEWORK = {
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
+}
 
 ROOT_URLCONF = 'core_portfolio.urls'
 
@@ -88,8 +97,6 @@ WSGI_APPLICATION = 'core_portfolio.wsgi.application'
 
 # AUTH_USER_MODEL= 'app_portfolio.UserModel'
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 IS_PRODUCTION = _envConfig("IS_PRODUCTION", cast=bool)
 
 SUPABASE_URL: Final[str] = _envConfig("SUPABASE_URL", cast=str)
@@ -123,8 +130,6 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
