@@ -19,3 +19,7 @@ class TagModel(TimeStampedModel):
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
+    class Meta:
+        indexes = [
+            models.Index(fields=["name", "slug"]),
+        ]

@@ -22,3 +22,8 @@ class AuthorModel(TimeStampedModel):
     
     def __str__(self):
         return self.display_name
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["user", "display_name"]),
+        ]

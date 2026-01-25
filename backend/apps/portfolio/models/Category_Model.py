@@ -35,3 +35,8 @@ class CategoryModel(TimeStampedModel):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["name", "type", "parent"]),
+        ]

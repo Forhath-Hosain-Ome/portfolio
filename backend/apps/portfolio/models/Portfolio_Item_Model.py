@@ -54,3 +54,8 @@ class PortfolioItemModel(TimeStampedModel, PublishableModel, OrderableModel, SEO
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["title"]),
+        ]

@@ -8,7 +8,7 @@ from imagekit.processors import ResizeToFill
 
 class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
     
-    title = models.CharField(max_length=200)
+    BlogPostModel = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True, blank=True)
     
     # Author
@@ -56,3 +56,8 @@ class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["author", "is_featured", "tags"]),
+        ]
