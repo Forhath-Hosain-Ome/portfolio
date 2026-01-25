@@ -1,6 +1,6 @@
 from django.urls import path
-from apps.blog.views import AurthorApiView
+from apps.blog.views import AurthorListApiView
 
 urlpatterns = [
-    path('aurthor/', AurthorApiView.as_view()),
+    path('aurthor/', AurthorListApiView.as_view()),
 ]
