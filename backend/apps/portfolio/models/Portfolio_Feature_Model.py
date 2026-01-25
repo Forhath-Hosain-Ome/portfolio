@@ -1,8 +1,8 @@
 from django.db import models
-from apps.core.models import OrderableModel
+from apps.core.models import OrderableModel, TimeStampedModel
 from .Portfolio_Item_Model import PortfolioItemModel
 
-class PortfolioFeatureModel(OrderableModel):
+class PortfolioFeatureModel(OrderableModel, TimeStampedModel):
     """Features/highlights for portfolio items."""
     
     portfolio_item = models.ForeignKey(

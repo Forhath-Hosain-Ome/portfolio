@@ -49,7 +49,7 @@ class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
     class Meta:
         ordering = ['-published_at']
         indexes = [
-            models.Index(fields=["author", "is_featured", "tags"]),
+            models.Index(fields=["is_featured"]),
         ]
     
     def __str__(self):

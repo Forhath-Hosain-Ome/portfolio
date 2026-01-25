@@ -1,8 +1,8 @@
 from django.db import models
-from apps.core.models import OrderableModel
+from apps.core.models import OrderableModel, TimeStampedModel
 from .Portfolio_Item_Model import PortfolioItemModel
 
-class PortfolioImageModel(OrderableModel):
+class PortfolioImageModel(OrderableModel, TimeStampedModel):
     """Additional images for portfolio items."""
     
     portfolio_item = models.ForeignKey(
