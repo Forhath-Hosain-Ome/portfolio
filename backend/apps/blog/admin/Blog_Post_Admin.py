@@ -23,7 +23,7 @@ class BlogPostAdmin(admin.ModelAdmin):
     )
 
     list_display = (
-        "title",
+        "BlogPostModel",
         "slug",
         "featured_image",
         "excerpt",
@@ -37,10 +37,10 @@ class BlogPostAdmin(admin.ModelAdmin):
         "is_active"
     )
 
-    list_display_links = ("title", "slug", "is_featured")
+    list_display_links = ("BlogPostModel", "slug", "is_featured")
 
     search_fields = (
-        "title",
+        "BlogPostModel",
         "categories",
         "tags",
     )
@@ -49,7 +49,7 @@ class BlogPostAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ("Blog Information", {
-            "fields": ("title", "slug", "author",),
+            "fields": ("BlogPostModel", "slug", "author",),
         }),
         ("Media", {
             "fields": ("featured_image",),

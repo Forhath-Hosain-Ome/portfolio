@@ -1,25 +1,21 @@
 from django.contrib import admin
-from apps.portfolio.models import CategoryModel
+from apps.portfolio.models import PortfolioImageModel
 # Register your models here.
 
-@admin.register(CategoryModel)
-class CategoryAdmin(admin.ModelAdmin):
+@admin.register(PortfolioImageModel)
+class PortfolioImageAdmin(admin.ModelAdmin):
     list_display = (
-        "name",
-        "slug",
-        "type",
-        "description",
-        "parent",
+        "portfolio_item",
+        "image",
+        "caption",
+        "is_primary",
         "is_active",
-        "created_at",
-        "updated_at",
     )
 
-    list_display_links = ("name", "type")
+    list_display_links = ("portfolio_item",)
 
     list_filter = (
-        "type",
-        "parent",
+        "portfolio_item",
         "is_active",
         "created_at",
         "updated_at",
@@ -33,8 +29,7 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ("-created_at",)
 
     search_fields = (
-        "type",
-        "parent",
+        "portfolio_item",
     )
 
     search_help_text = "Search by user name"
@@ -46,7 +41,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
     fieldsets = (
         ("Catagory Information", {
-            "fields": ("name", "slug", "type", "description", "parent",),
+            "fields": ("portfolio_item",),
         }),
         ("Status", {
             "fields": ("is_active",),

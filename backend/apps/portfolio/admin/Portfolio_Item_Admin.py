@@ -1,25 +1,32 @@
 from django.contrib import admin
-from apps.portfolio.models import CategoryModel
+from apps.portfolio.models import PortfolioItemModel
 # Register your models here.
 
-@admin.register(CategoryModel)
-class CategoryAdmin(admin.ModelAdmin):
+@admin.register(PortfolioItemModel)
+class PortfolioItemAdmin(admin.ModelAdmin):
     list_display = (
-        "name",
+        "title",
+        "subtitle",
         "slug",
-        "type",
+        "main_image",
+        "short_description",
         "description",
-        "parent",
+        "description_extended",
+        "client_name",
+        "project_url",
+        "project_date",
+        "views_count",
+        "likes_count",
         "is_active",
-        "created_at",
-        "updated_at",
     )
 
-    list_display_links = ("name", "type")
+    list_display_links = ("title",)
 
     list_filter = (
-        "type",
-        "parent",
+        "client_name",
+        "project_date",
+        "categories",
+        "tags",
         "is_active",
         "created_at",
         "updated_at",
@@ -33,8 +40,8 @@ class CategoryAdmin(admin.ModelAdmin):
     ordering = ("-created_at",)
 
     search_fields = (
-        "type",
-        "parent",
+        "title",
+        "categories"
     )
 
     search_help_text = "Search by user name"
@@ -45,8 +52,17 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
     fieldsets = (
-        ("Catagory Information", {
-            "fields": ("name", "slug", "type", "description", "parent",),
+        ("Portfolio Item Information", {
+            "fields": ("title", "subtitle", "short_description", "description", "description_extended", "main_image",),
+        }),
+        ("Client Information", {
+            "fields": ("client_name", "project_url", "project_date",),
+        }),
+        ("SEO", {
+            "fields": ("slug", "tags", "categories",),
+        }),
+        ("Project View", {
+            "fields": ("views_count", "likes_count",),
         }),
         ("Status", {
             "fields": ("is_active",),
