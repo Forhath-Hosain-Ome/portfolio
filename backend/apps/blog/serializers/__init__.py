@@ -1,1 +1,2 @@
 from .Author_Serializer import AurthorSerializer
+from .Blog_Post_Serializer import BlogPostSerializer
