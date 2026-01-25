@@ -46,6 +46,9 @@ class PortfolioItemModel(TimeStampedModel, PublishableModel, OrderableModel, SEO
     
     class Meta:
         ordering = ['-published_at', 'display_order']
+        indexes = [
+            models.Index(fields=["title"]),
+        ]
     
     def __str__(self):
         return self.title
@@ -54,8 +57,3 @@ class PortfolioItemModel(TimeStampedModel, PublishableModel, OrderableModel, SEO
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
-
-    class Meta:
-        indexes = [
-            models.Index(fields=["title"]),
-        ]

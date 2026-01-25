@@ -16,11 +16,9 @@ class PortfolioImageModel(OrderableModel):
     
     class Meta:
         ordering = ['display_order']
-    
-    def __str__(self):
-        return f"{self.portfolio_item.title} - Image {self.display_order}"
-
-    class Meta:
         indexes = [
             models.Index(fields=["is_primary"]),
         ]
+    
+    def __str__(self):
+        return f"{self.portfolio_item.title} - Image {self.display_order}"

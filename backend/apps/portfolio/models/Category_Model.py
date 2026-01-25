@@ -27,6 +27,9 @@ class CategoryModel(TimeStampedModel):
     class Meta:
         verbose_name_plural = "Categories"
         ordering = ['name']
+        indexes = [
+            models.Index(fields=["name", "type", "parent"]),
+        ]
     
     def __str__(self):
         return self.name
@@ -35,8 +38,3 @@ class CategoryModel(TimeStampedModel):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-
-    class Meta:
-        indexes = [
-            models.Index(fields=["name", "type", "parent"]),
-        ]

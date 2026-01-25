@@ -33,11 +33,9 @@ class SkillModel(TimeStampedModel, OrderableModel):
     
     class Meta:
         ordering = ['category', 'display_order']
-    
-    def __str__(self):
-        return f"{self.name} ({self.get_category_display()})"
-
-    class Meta:
         indexes = [
             models.Index(fields=["category"]),
         ]
+    
+    def __str__(self):
+        return f"{self.name} ({self.get_category_display()})"

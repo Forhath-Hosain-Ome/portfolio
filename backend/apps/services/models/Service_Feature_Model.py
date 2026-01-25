@@ -15,11 +15,9 @@ class ServiceFeatureModel(OrderableModel):
     
     class Meta:
         ordering = ['display_order']
-    
-    def __str__(self):
-        return f"{self.service.title} - {self.feature_text}"
-    
-    class Meta:
         indexes = [
             models.Index(fields=["service"]),
         ]
+    
+    def __str__(self):
+        return f"{self.service.title} - {self.feature_text}"

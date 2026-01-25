@@ -14,11 +14,9 @@ class PortfolioFeatureModel(OrderableModel):
     
     class Meta:
         ordering = ['display_order']
-    
-    def __str__(self):
-        return self.feature_text
-
-    class Meta:
         indexes = [
             models.Index(fields=["portfolio_item"]),
         ]
+    
+    def __str__(self):
+        return self.feature_text

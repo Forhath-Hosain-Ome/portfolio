@@ -48,6 +48,9 @@ class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
     
     class Meta:
         ordering = ['-published_at']
+        indexes = [
+            models.Index(fields=["author", "is_featured", "tags"]),
+        ]
     
     def __str__(self):
         return self.title
@@ -56,8 +59,3 @@ class BlogPostModel(TimeStampedModel, PublishableModel, SEOModel):
         if not self.slug:
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
-
-    class Meta:
-        indexes = [
-            models.Index(fields=["author", "is_featured", "tags"]),
-        ]

@@ -23,11 +23,9 @@ class EducationModel(TimeStampedModel, OrderableModel):
     class Meta:
         ordering = ['-start_date', 'display_order']
         verbose_name_plural = "Education"
-    
-    def __str__(self):
-        return f"{self.degree_title} - {self.institution}"
-
-    class Meta:
         indexes = [
             models.Index(fields=["degree_title"]),
         ]
+    
+    def __str__(self):
+        return f"{self.degree_title} - {self.institution}"

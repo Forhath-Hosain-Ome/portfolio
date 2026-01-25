@@ -10,6 +10,9 @@ class TagModel(TimeStampedModel):
     
     class Meta:
         ordering = ['name']
+        indexes = [
+            models.Index(fields=["name", "slug"]),
+        ]
     
     def __str__(self):
         return self.name
@@ -18,8 +21,3 @@ class TagModel(TimeStampedModel):
         if not self.slug:
             self.slug = slugify(self.name)
         super().save(*args, **kwargs)
-
-    class Meta:
-        indexes = [
-            models.Index(fields=["name", "slug"]),
-        ]
