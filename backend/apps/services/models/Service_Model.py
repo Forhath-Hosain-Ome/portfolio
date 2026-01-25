@@ -29,6 +29,9 @@ class ServiceModel(TimeStampedModel, OrderableModel):
     
     class Meta:
         ordering = ['display_order']
+        indexes = [
+            models.Index(fields=["is_featured", "is_active"]),
+        ]
     
     def __str__(self):
         return self.title

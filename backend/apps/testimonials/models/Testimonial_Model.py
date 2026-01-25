@@ -35,6 +35,9 @@ class TestimonialModel(TimeStampedModel, OrderableModel):
     
     class Meta:
         ordering = ['-is_featured', 'display_order']
+        indexes = [
+            models.Index(fields=["is_active", "rating", "is_featured"]),
+        ]
     
     def __str__(self):
         return f"{self.client_name} - {self.client_company}"

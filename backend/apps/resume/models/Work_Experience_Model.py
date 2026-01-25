@@ -27,3 +27,8 @@ class WorkExperienceModel(TimeStampedModel, OrderableModel):
     
     def __str__(self):
         return f"{self.job_title} at {self.company_name}"
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["is_current"]),
+        ]

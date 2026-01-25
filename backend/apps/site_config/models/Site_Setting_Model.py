@@ -28,6 +28,9 @@ class SiteSettingModel(TimeStampedModel, OrderableModel):
     
     class Meta:
         ordering = ['setting_group', 'setting_key']
+        indexes = [
+            models.Index(fields=["is_active"]),
+        ]
     
     def __str__(self):
         return f"{self.setting_key} ({self.get_setting_group_display()})"

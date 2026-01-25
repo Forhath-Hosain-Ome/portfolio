@@ -15,6 +15,9 @@ class PlanFeatureModel(TimeStampedModel, OrderableModel):
     
     class Meta:
         ordering = ['display_order']
+        indexes = [
+            models.Index(fields=["is_active", "is_included"]),
+        ]
     
     def __str__(self):
         status = "✓" if self.is_included else "✗"

@@ -26,6 +26,9 @@ class PricingPlanModel(TimeStampedModel, OrderableModel):
     
     class Meta:
         ordering = ['display_order']
+        indexes = [
+            models.Index(fields=["is_active","is_featured"]),
+        ]
     
     def __str__(self):
         return f"{self.plan_name} - {self.currency}{self.price}/{self.billing_period}"

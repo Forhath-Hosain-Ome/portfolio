@@ -15,6 +15,9 @@ class ExternalProfileModel(TimeStampedModel, OrderableModel):
     
     class Meta:
         ordering = ['display_order']
+        indexes = [
+            models.Index(fields=["is_active"]),
+        ]
     
     def __str__(self):
         return f"{self.platform_name} - {self.title}"

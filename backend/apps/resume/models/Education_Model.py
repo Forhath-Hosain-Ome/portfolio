@@ -26,3 +26,8 @@ class EducationModel(TimeStampedModel, OrderableModel):
     
     def __str__(self):
         return f"{self.degree_title} - {self.institution}"
+
+    class Meta:
+        indexes = [
+            models.Index(fields=["degree_title"]),
+        ]

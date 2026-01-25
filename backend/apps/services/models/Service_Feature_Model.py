@@ -18,3 +18,8 @@ class ServiceFeatureModel(OrderableModel):
     
     def __str__(self):
         return f"{self.service.title} - {self.feature_text}"
+    
+    class Meta:
+        indexes = [
+            models.Index(fields=["service"]),
+        ]

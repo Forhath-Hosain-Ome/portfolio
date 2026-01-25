@@ -21,6 +21,9 @@ class ContactInfoModels(TimeStampedModel, OrderableModel):
     class Meta:
         ordering = ['display_order']
         verbose_name_plural = "Contact information"
+        indexes = [
+            models.Index(fields=["is_active"]),
+        ]
     
     def __str__(self):
         return f"{self.get_info_type_display()}: {self.value}"
