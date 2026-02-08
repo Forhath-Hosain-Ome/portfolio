@@ -1,4 +1,3 @@
-from decouple import config
 from supabase import create_client, Client
 from pathlib import Path
 import os
@@ -32,6 +31,11 @@ SECRET_KEY = 'django-insecure-_a_$$!z+cs7#0#=rn9bd__x(ur!d6=t#+-&w98$%)!815uh4ro
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'backend', '*']
+
+CORS_ALLOWED_ORIGINS = [
+    "https://portfolio-3onx.onrender.com",
+    "http://localhost:5173",
+]
 
 
 # Application definition
@@ -115,6 +119,7 @@ if IS_PRODUCTION:
             'PASSWORD': _envConfig('DB_PASSWORD'),
             'HOST': _envConfig('DB_HOST'),  # Pooled URL
             'PORT': _envConfig('DB_PORT'),
+            'DISABLE_SERVER_SIDE_CURSORS': _envConfig('SERVER_SIDE_CURSORS'),
             'OPTIONS': {
                 'sslmode': 'require',
                 'sslrootcert': os.path.join(BASE_DIR, 'supabase.crt'),
