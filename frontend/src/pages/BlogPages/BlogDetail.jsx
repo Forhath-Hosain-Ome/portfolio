@@ -8,7 +8,7 @@ import PostImg1 from "../../assets/images/resources/postDetailImg1.jpg";
 import { RecentPost } from "../../components/BlogPosts";
 import { BottomBar2 } from "../../components/BottomBar";
 import { ContactUs2 } from "../../components/ContactUs";
-import { Header } from "../../components/Header";
+import { Header2 } from "../../components/Header";
 import { PageTitle } from "../../components/PageTitle";
 import { Sidebar2 } from "../../components/Sidebar";
 import { SocialLinks4 } from "../../components/SocialLinks";
@@ -56,7 +56,7 @@ const BlogDetail = () => {
           Blog Detail - Fastone Personal Portfolio or CV/Resume React App
         </title>
       </Helmet>
-      <Header />
+      <Header2 />
       <PageTitle
         title="Blog Detail"
         hometitle="Home"

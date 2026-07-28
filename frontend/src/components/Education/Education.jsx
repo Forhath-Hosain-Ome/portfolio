@@ -1,8 +1,18 @@
 import { BsPlus } from "react-icons/bs";
 import { education } from "../../data/education";
 import { SectionTitleIcon } from "../SectionTitles";
+// import { useEffect, useState } from "react";
+
 
 const Education = (props) => {
+  // const [education, seteducation] = useState("");
+  // useEffect(() => {
+  //   fetch("http://127.0.0.1:8000/api/hello/")
+  //     .then(res => res.json())
+  //     .then(data => seteducation(data.message));
+  // }, []);
+  // console.log(education)
+
   return (
     <div className="eduWrap relative w-full">
       <SectionTitleIcon title="Education"></SectionTitleIcon>
